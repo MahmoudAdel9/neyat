@@ -14,6 +14,7 @@ import {
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SkipLink } from "@/components/layout/skip-link";
+import { ThemeProvider } from "@/components/theme/theme-provider";
 import { routing } from "@/i18n/routing";
 import { getSiteUrl } from "@/lib/seo";
 import "../globals.css";
@@ -85,15 +86,18 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
       lang={locale}
       dir={direction}
       className={`${uiFont.variable} ${displayFont.variable} ${serifFont.variable} h-full`}
+      suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col">
         <NextIntlClientProvider messages={messages}>
-          <SkipLink />
-          <SiteHeader />
-          <main id="main-content" className="flex-1">
-            {children}
-          </main>
-          <SiteFooter />
+          <ThemeProvider>
+            <SkipLink />
+            <SiteHeader />
+            <main id="main-content" className="flex-1">
+              {children}
+            </main>
+            <SiteFooter />
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

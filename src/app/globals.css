@@ -51,8 +51,67 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* Contemplative night — default theme for نوايا */
+/* Soft day — light theme for نوايا */
 :root {
+  color-scheme: light;
+
+  --background: oklch(0.97 0.01 240);
+  --foreground: oklch(0.24 0.03 248);
+
+  --card: oklch(0.99 0.005 240);
+  --card-foreground: oklch(0.24 0.03 248);
+
+  --popover: oklch(0.99 0.005 240);
+  --popover-foreground: oklch(0.24 0.03 248);
+
+  /* Deeper emerald for contrast on light surfaces */
+  --primary: oklch(0.48 0.13 155);
+  --primary-foreground: oklch(0.98 0.005 95);
+
+  --secondary: oklch(0.93 0.015 242);
+  --secondary-foreground: oklch(0.28 0.03 248);
+
+  --muted: oklch(0.94 0.012 242);
+  --muted-foreground: oklch(0.48 0.02 248);
+
+  /* Softer blue accent */
+  --accent: oklch(0.55 0.12 240);
+  --accent-foreground: oklch(0.98 0.005 95);
+
+  --destructive: oklch(0.55 0.2 25);
+
+  --border: oklch(0.36 0.02 242 / 14%);
+  --input: oklch(0.36 0.02 242 / 18%);
+  --ring: oklch(0.48 0.13 155);
+
+  --quran: oklch(0.48 0.13 155);
+  --hadith: oklch(0.5 0.12 235);
+
+  --chart-1: oklch(0.48 0.13 155);
+  --chart-2: oklch(0.5 0.12 235);
+  --chart-3: oklch(0.52 0.1 195);
+  --chart-4: oklch(0.48 0.09 170);
+  --chart-5: oklch(0.42 0.06 245);
+
+  --radius: 0.75rem;
+
+  --sidebar: oklch(0.96 0.01 242);
+  --sidebar-foreground: oklch(0.24 0.03 248);
+
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+
+  --sidebar-accent: oklch(0.93 0.015 242);
+  --sidebar-accent-foreground: oklch(0.24 0.03 248);
+
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
+
+/* Contemplative night — default theme for نوايا */
+.dark {
+  color-scheme: dark;
+
   --background: oklch(0.17 0.025 248);
   --foreground: oklch(0.96 0.01 95);
 
@@ -92,8 +151,6 @@
   --chart-4: oklch(0.52 0.09 170);
   --chart-5: oklch(0.42 0.06 245);
 
-  --radius: 0.75rem;
-
   --sidebar: oklch(0.2 0.025 245);
   --sidebar-foreground: oklch(0.96 0.01 95);
 
@@ -121,6 +178,22 @@
 
     background-image:
       radial-gradient(circle at 50% -15%,
+        oklch(0.72 0.06 235 / 0.28),
+        transparent 45%),
+      radial-gradient(circle at 0% 100%,
+        oklch(0.7 0.08 155 / 0.12),
+        transparent 35%),
+      radial-gradient(circle at 100% 100%,
+        oklch(0.72 0.06 195 / 0.1),
+        transparent 30%);
+
+    background-color: var(--background);
+    background-attachment: fixed;
+  }
+
+  .dark body {
+    background-image:
+      radial-gradient(circle at 50% -15%,
         oklch(0.42 0.12 235 / 0.35),
         transparent 45%),
       radial-gradient(circle at 0% 100%,
@@ -129,9 +202,6 @@
       radial-gradient(circle at 100% 100%,
         oklch(0.52 0.1 195 / 0.12),
         transparent 30%);
-
-    background-color: var(--background);
-    background-attachment: fixed;
   }
 
   @media (prefers-reduced-motion: reduce) {

@@ -4,6 +4,7 @@ import { HomeIcon, MenuIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -87,10 +88,12 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-2 md:flex">
           <NavLinks className="items-center" />
+          <ThemeToggle />
           <LocaleSwitcher />
         </div>
 
         <div className="flex items-center gap-1 md:hidden">
+          <ThemeToggle />
           <LocaleSwitcher />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger

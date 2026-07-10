@@ -43,7 +43,16 @@ export async function FeaturedQuote() {
   const locale = await getLocale();
 
   return (
-    <div className="animate-rise flex flex-col gap-4">
+    <section
+      aria-labelledby="quotes-heading"
+      className="animate-rise flex flex-col gap-4"
+    >
+      <h2
+        id="quotes-heading"
+        className="text-primary text-sm font-semibold tracking-[0.25em] uppercase md:text-base"
+      >
+        {t("quotesTitle")}
+      </h2>
       <Quote
         locale={locale}
         attribution={t("featuredQuoteAttribution")}
@@ -69,6 +78,6 @@ export async function FeaturedQuote() {
         attribution={t("fifthQuoteAttribution")}
         text={t("fifthQuote")}
       />
-    </div>
+    </section>
   );
 }

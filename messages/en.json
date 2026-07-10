@@ -14,12 +14,16 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "switchLocale": "Switch language",
+    "toggleTheme": "Toggle theme",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode",
     "skipToContent": "Skip to content"
   },
   "Home": {
     "brand": "Nwaya",
     "tagline": "Turn your everyday habits into acts of worship by renewing your intention for Allah in your sleep, work, and exercise, with authentic evidence from the Quran, the Sunnah, the early generations, and the scholars of Islam.",
     "explore": "Explore Intentions",
+    "quotesTitle": "On Intention",
     "featuredQuote": "Worldly actions are judged according to the intention of the one who performs them. If he intends good through them, they become good for him; otherwise, he will have only what he intended. This is due to the saying of the Prophet ﷺ: “Actions are only by intentions, and every person shall have only what he intended.”",
     "featuredQuoteAttribution": "— Shaykh Muhammad ibn Ṣāliḥ al-'Uthaymīn رحمه الله",
     "secondQuote": "How many a small deed is made great by one's intention, and how many a great deed is made small by one's intention.",
