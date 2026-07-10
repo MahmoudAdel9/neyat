@@ -9,7 +9,7 @@ export default async function NotFound() {
       <h1 className="font-heading text-3xl font-semibold tracking-tight">
         {t("title")}
       </h1>
-      <p className="text-muted-foreground mt-3 max-w-md text-base leading-relaxed">
+      <p className="text-muted-foreground mt-3 max-w-md text-lg leading-relaxed">
         {t("description")}
       </p>
       <Link

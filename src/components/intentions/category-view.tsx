@@ -17,7 +17,7 @@ export async function CategoryView({ category, locale }: CategoryViewProps) {
     <article>
       <Link
         href="/"
-        className="text-muted-foreground hover:text-foreground mb-8 inline-flex items-center gap-2 text-sm transition-colors"
+        className="text-muted-foreground hover:text-foreground mb-8 inline-flex items-center gap-2 text-base transition-colors"
       >
         <ArrowLeftIcon className="size-4 rtl:rotate-180" aria-hidden="true" />
         {t("backHome")}
@@ -27,7 +27,7 @@ export async function CategoryView({ category, locale }: CategoryViewProps) {
         <h1 className="font-heading text-3xl font-semibold tracking-tight md:text-4xl">
           {localize(category.title, locale)}
         </h1>
-        <p className="text-muted-foreground mt-4 max-w-2xl text-base leading-relaxed md:text-lg">
+        <p className="text-muted-foreground mt-4 max-w-2xl text-lg leading-relaxed md:text-xl">
           {localize(category.description, locale)}
         </p>
       </header>

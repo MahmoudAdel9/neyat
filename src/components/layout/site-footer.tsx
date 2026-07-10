@@ -24,7 +24,7 @@ export async function SiteFooter() {
             >
               {tHome("brand")}
             </Link>
-            <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
+            <p className="text-muted-foreground mt-3 text-base leading-relaxed">
               {t("builtFor")}
             </p>
           </div>
@@ -44,7 +44,7 @@ export async function SiteFooter() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                    className="text-muted-foreground hover:text-foreground text-base transition-colors"
                   >
                     {tNav(item.key)}
                   </Link>
@@ -54,9 +54,9 @@ export async function SiteFooter() {
           </nav>
         </div>
 
-        <div className="border-border/40 flex flex-col gap-2 border-t pt-6 text-sm">
+        <div className="border-border/40 flex flex-col gap-2 border-t pt-6 text-base">
           <p className="text-muted-foreground leading-relaxed">{t("rights")}</p>
-          <p className="text-muted-foreground/70">{t("copyright", { year })}</p>
+          <p className="text-muted-foreground">{t("copyright", { year })}</p>
         </div>
       </div>
     </footer>

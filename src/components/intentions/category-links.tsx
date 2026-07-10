@@ -52,7 +52,7 @@ export async function CategoryLinks({ locale }: CategoryLinksProps) {
               <span className="font-heading text-foreground group-hover:text-primary block text-2xl font-semibold tracking-tight transition-colors md:text-3xl">
                 {t(keys.title)}
               </span>
-              <span className="text-muted-foreground mt-2 block max-w-xl text-base leading-relaxed">
+              <span className="text-muted-foreground mt-2 block max-w-xl text-lg leading-relaxed">
                 {t(keys.description)}
               </span>
               <span className="sr-only">
