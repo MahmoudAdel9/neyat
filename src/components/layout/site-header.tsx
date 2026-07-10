@@ -19,7 +19,11 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/", key: "home" as const, icon: HomeIcon },
-  { href: "/intentions/sleep", key: "sleep" as const, icon: categoryIcons.sleep },
+  {
+    href: "/intentions/sleep",
+    key: "sleep" as const,
+    icon: categoryIcons.sleep,
+  },
   { href: "/intentions/work", key: "work" as const, icon: categoryIcons.work },
   { href: "/intentions/gym", key: "gym" as const, icon: categoryIcons.gym },
 ];
@@ -51,8 +55,8 @@ function NavLinks({
             className={cn(
               "inline-flex items-center gap-2 rounded-md px-3 py-2 text-base transition-colors",
               isActive
-                ? "bg-accent text-foreground"
-                : "text-muted-foreground hover:text-foreground hover:bg-accent/60",
+                ? "bg-primary dark:text-foreground text-white"
+                : "text-muted-foreground hover:text-foreground hover:bg-primary/80",
             )}
             aria-current={isActive ? "page" : undefined}
           >
