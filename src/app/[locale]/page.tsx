@@ -46,7 +46,7 @@ export default async function HomePage({ params }: PageProps) {
           aria-labelledby="home-heading"
           className="animate-rise mt-16 min-h-[70vh] sm:mt-20"
         >
-          <p className="text-primary mb-4 text-sm tracking-[0.25em] uppercase">
+          <p className="text-primary mb-4 text-sm tracking-[0.25em] uppercase md:text-base">
             {t("explore")}
           </p>
           <h1

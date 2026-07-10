@@ -16,7 +16,7 @@ function Quote({ attribution, text, locale, className }: QuoteProps) {
         className,
       )}
     >
-      <figcaption className="text-primary mb-3 text-xs font-semibold tracking-[0.16em] uppercase">
+      <figcaption className="text-primary mb-3 text-sm font-semibold tracking-[0.08em] md:text-base">
         {attribution}
       </figcaption>
       <blockquote
