@@ -19,12 +19,12 @@ const kindStyles: Record<
   },
   athar: {
     accent: "border-s-border",
-    label: "text-muted-foreground",
+    label: "text-foreground/75",
     surface: "border-border/50 bg-muted/30",
   },
   scholar: {
     accent: "border-s-border",
-    label: "text-muted-foreground",
+    label: "text-foreground/75",
     surface: "border-border/50 bg-muted/30",
   },
 };
@@ -49,7 +49,7 @@ export async function EvidenceBlock({ evidence, locale }: EvidenceBlockProps) {
     >
       <figcaption
         className={cn(
-          "mb-3 text-xs font-medium tracking-[0.16em] uppercase",
+          "mb-3 text-xs font-semibold tracking-[0.16em] uppercase",
           styles.label,
         )}
       >
@@ -65,8 +65,8 @@ export async function EvidenceBlock({ evidence, locale }: EvidenceBlockProps) {
       >
         <p>«{localize(evidence.text, locale)}»</p>
       </blockquote>
-      <footer className="border-border/25 mt-4 border-t pt-3">
-        <p className="text-muted-foreground text-sm leading-relaxed">
+      <footer className="border-border/35 mt-4 border-t pt-3">
+        <p className="text-foreground/80 text-sm leading-relaxed">
           {localize(evidence.source, locale)}
         </p>
       </footer>

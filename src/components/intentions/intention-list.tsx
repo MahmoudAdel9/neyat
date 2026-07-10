@@ -23,8 +23,8 @@ export function IntentionItem({
   const title = localize(intention.title, locale);
   const titleClass =
     level === 0
-      ? "font-heading text-lg leading-relaxed font-medium md:text-xl"
-      : "text-base leading-relaxed font-medium md:text-lg";
+      ? "font-heading text-foreground text-lg leading-relaxed font-medium md:text-xl"
+      : "text-foreground/90 text-base leading-relaxed font-medium md:text-lg";
 
   if (!hasChildren && !hasEvidences) {
     return (
@@ -54,7 +54,7 @@ export function IntentionItem({
         <h3 className={cn(titleClass, "min-w-0 flex-1")}>{title}</h3>
         <span
           aria-hidden="true"
-          className="bg-muted/50 text-muted-foreground group-open:bg-primary/15 group-open:text-primary mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full transition-colors"
+          className="bg-muted/60 text-foreground/70 group-open:bg-primary/15 group-open:text-primary mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full transition-colors"
         >
           <ChevronDownIcon className="size-4 transition-transform group-open:rotate-180" />
         </span>
