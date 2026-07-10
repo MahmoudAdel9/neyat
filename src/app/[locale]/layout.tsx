@@ -4,6 +4,7 @@ import { SkipLink } from "@/components/layout/skip-link";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { routing } from "@/i18n/routing";
 import { getSiteUrl } from "@/lib/seo";
+import { Analytics } from "@vercel/analytics/next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import {
   getMessages,
@@ -119,6 +120,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
             <SiteFooter />
           </ThemeProvider>
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );
