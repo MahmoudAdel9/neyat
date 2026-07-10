@@ -80,6 +80,10 @@ export default async function HomePage({ params }: PageProps) {
           </div>
         </section>
 
+        <div className="pb-20 sm:pb-28">
+          <FeaturedQuote />
+        </div>
+
         <section
           id="categories"
           aria-labelledby="categories-heading"
@@ -90,10 +94,6 @@ export default async function HomePage({ params }: PageProps) {
           </h2>
           <CategoryLinks locale={typedLocale} />
         </section>
-
-        <div className="pb-20 sm:pb-28">
-          <FeaturedQuote />
-        </div>
       </div>
     </>
   );
