@@ -15,6 +15,8 @@ export type Evidence = {
 export type Intention = {
   id: string;
   title: LocaleString;
+  /** Exact phrases to emphasize within `title` (must match diacritics). */
+  titleHighlights?: LocaleString[];
   evidences: Evidence[];
   children?: Intention[];
 };

@@ -283,6 +283,12 @@ export const workCategory: IntentionCategory = {
                 ar: "نِعْمَ المالُ الصَّالحُ للمَرءِ الصَّالحِ.",
                 en: "How excellent is righteous wealth for a righteous person.",
               },
+              highlights: [
+                {
+                  ar: "نِعْمَ المالُ الصَّالحُ للمَرءِ الصَّالحِ.",
+                  en: "How excellent is righteous wealth for a righteous person.",
+                },
+              ],
               source: {
                 ar: "رواه البخاري في الأدب المفرد من حديث عمرو بن العاص رضي الله عنه",
                 en: "Narrated by al-Bukhari in al-Adab al-Mufrad from the hadith of Amr ibn al-As (may Allah be pleased with him)",
@@ -303,6 +309,12 @@ export const workCategory: IntentionCategory = {
                 ar: "قال أبو إسحاق السبيعي: كانوا يرون السعة عونًا على الدين",
                 en: "Abu Ishaq as-Sabi‘i said: They used to regard ease of means as an aid to the religion.",
               },
+              highlights: [
+                {
+                  ar: "عونًا على الدين",
+                  en: "an aid to the religion",
+                },
+              ],
               source: {
                 ar: "رواه أحمد في العلل ومعرفة الرجال",
                 en: "Narrated by Ahmad in al-‘Ilal wa Ma‘rifat al-Rijal",
@@ -314,6 +326,12 @@ export const workCategory: IntentionCategory = {
                 ar: "قال محمد بن المنكدر: نعم العون على التقوى الغنى",
                 en: "Muhammad ibn al-Munkadir said: How excellent an aid to piety is wealth.",
               },
+              highlights: [
+                {
+                  ar: "نعم العون على التقوى",
+                  en: "How excellent an aid to piety",
+                },
+              ],
               source: {
                 ar: "رواه البغوي في مسند ابن الجعد",
                 en: "Narrated by al-Baghawi in Musnad Ibn al-Ja‘d",
@@ -325,6 +343,12 @@ export const workCategory: IntentionCategory = {
                 ar: "قال سفيان الثوري: المال في زماننا هذا سلاح المؤمن",
                 en: "Sufyan ath-Thawri said: Wealth in our time is the weapon of the believer.",
               },
+              highlights: [
+                {
+                  ar: "سلاح المؤمن",
+                  en: "the weapon of the believer",
+                },
+              ],
               source: {
                 ar: "رواه ابن أبي الدنيا في إصلاح المال",
                 en: "Narrated by Ibn Abi al-Dunya in Islah al-Mal",
@@ -336,6 +360,12 @@ export const workCategory: IntentionCategory = {
                 ar: "قال سعيد بن المسيب: لا خير فيمن لا يطلب المال فيقي به دينه، ويصون به عرضه، ويقضي به ذمامه، وإن مات تركه ميراثًا لمن بعده",
                 en: "Sa‘id ibn al-Musayyib said: There is no good in one who does not seek wealth to protect his religion with it, safeguard his honor with it, fulfill his obligations with it, and if he dies leave it as inheritance for those after him.",
               },
+              highlights: [
+                {
+                  ar: "لا خير فيمن لا يطلب المال فيقي به دينه، ويصون به عرضه، ويقضي به ذمامه، وإن مات تركه ميراثًا لمن بعده",
+                  en: "There is no good in one who does not seek wealth to protect his religion with it, safeguard his honor with it, fulfill his obligations with it, and if he dies leave it as inheritance for those after him",
+                },
+              ],
               source: {
                 ar: "رواه ابن أبي الدنيا في إصلاح المال",
                 en: "Narrated by Ibn Abi al-Dunya in Islah al-Mal",

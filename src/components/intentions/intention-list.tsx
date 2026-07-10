@@ -2,6 +2,7 @@ import { ChevronDownIcon } from "lucide-react";
 import type { Intention, LocaleCode } from "@/content/intentions";
 import { localize } from "@/content/intentions";
 import { EvidenceBlock } from "@/components/intentions/evidence-block";
+import { highlightText } from "@/lib/highlight-text";
 import { cn } from "@/lib/utils";
 
 type IntentionItemProps = {
@@ -25,6 +26,9 @@ export function IntentionItem({
   const hasChildren = Boolean(intention.children?.length);
   const hasEvidences = intention.evidences.length > 0;
   const title = localize(intention.title, locale);
+  const titleHighlightPhrases =
+    intention.titleHighlights?.map((phrase) => localize(phrase, locale)) ?? [];
+  const renderedTitle = highlightText(title, titleHighlightPhrases);
   const titleClass =
     level === 0
       ? "font-heading text-foreground text-lg leading-relaxed font-medium md:text-xl"
@@ -38,7 +42,7 @@ export function IntentionItem({
           shellForLevel(level),
         )}
       >
-        <h3 className={titleClass}>{title}</h3>
+        <h3 className={titleClass}>{renderedTitle}</h3>
       </article>
     );
   }
@@ -59,7 +63,7 @@ export function IntentionItem({
           "[&::-webkit-details-marker]:hidden",
         )}
       >
-        <h3 className={cn(titleClass, "min-w-0 flex-1")}>{title}</h3>
+        <h3 className={cn(titleClass, "min-w-0 flex-1")}>{renderedTitle}</h3>
         <span
           aria-hidden="true"
           className="bg-muted/60 text-muted-foreground group-open/intention:bg-primary/15 group-open/intention:text-primary mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg transition-colors"

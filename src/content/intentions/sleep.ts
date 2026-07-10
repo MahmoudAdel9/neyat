@@ -103,6 +103,12 @@ export const sleepCategory: IntentionCategory = {
             ar: "لا ضَررَ ولا ضِرارَ",
             en: "There should be neither harm nor reciprocating harm.",
           },
+          highlights: [
+            {
+              ar: "لا ضَررَ ولا ضِرارَ",
+              en: "There should be neither harm nor reciprocating harm",
+            },
+          ],
           source: {
             ar: "رواه ابن ماجه في سننه متصلاً ومالك في الموطأ مرسلاً من حديث أبي سعيد الخدري رضي الله عنه",
             en: "Narrated by Ibn Majah in his Sunan with a connected chain and by Malik in al-Muwatta as a mursal report from the hadith of Abu Sa‘id al-Khudri (may Allah be pleased with him)",
@@ -134,6 +140,12 @@ export const sleepCategory: IntentionCategory = {
             ar: "احرِصْ على ما يَنفَعُكَ",
             en: "Be eager for what benefits you.",
           },
+          highlights: [
+            {
+              ar: "احرِصْ على ما يَنفَعُكَ",
+              en: "Be eager for what benefits you",
+            },
+          ],
           source: {
             ar: "رواه مسلم في صحيحه من حديث أبي هريرة رضي الله عنه",
             en: "Narrated by Muslim in his Sahih from the hadith of Abu Hurayrah (may Allah be pleased with him)",
@@ -206,6 +218,12 @@ export const sleepCategory: IntentionCategory = {
         ar: "امتثال سنن النوم الثابتة عن النبي صلى الله عليه وسلم، كالوضوء قبل النوم وتعاهد الفراش بنفضه والاضطجاع على الشق الأيمن والإتيان بأذكار النوم إلى غير ذلك من أذكار النوم؛ فإن هذه السنن لا يمكن أداؤها إلا عند النوم!",
         en: "Practicing the established sleep Sunnahs of the Prophet ﷺ — such as ablution before sleep, dusting the bed, lying on the right side, and saying the sleep remembrances — for these Sunnahs can only be performed when one sleeps!",
       },
+      titleHighlights: [
+        {
+          ar: "امتثال سنن النوم",
+          en: "Practicing the established sleep Sunnahs",
+        },
+      ],
       evidences: [],
     },
   ],
