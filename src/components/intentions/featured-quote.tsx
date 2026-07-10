@@ -1,3 +1,4 @@
+import { QuoteIcon } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { cn } from "@/lib/utils";
 
@@ -16,7 +17,8 @@ function Quote({ attribution, text, locale, className }: QuoteProps) {
         className,
       )}
     >
-      <figcaption className="text-primary mb-3 text-sm font-semibold tracking-[0.08em] md:text-base">
+      <figcaption className="text-primary mb-3 flex items-center gap-2 text-sm font-semibold tracking-[0.08em] md:text-base">
+        <QuoteIcon className="size-3.5 shrink-0 opacity-80" aria-hidden="true" />
         {attribution}
       </figcaption>
       <blockquote

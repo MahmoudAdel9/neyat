@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import type { Evidence, EvidenceKind, LocaleCode } from "@/content/intentions";
 import { localize } from "@/content/intentions";
+import { evidenceIcons } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 
 const kindStyles: Record<
@@ -38,6 +39,7 @@ export async function EvidenceBlock({ evidence, locale }: EvidenceBlockProps) {
   const t = await getTranslations("Category");
   const label = t(`evidenceLabel.${evidence.kind}`);
   const styles = kindStyles[evidence.kind];
+  const Icon = evidenceIcons[evidence.kind];
 
   return (
     <figure
@@ -49,10 +51,11 @@ export async function EvidenceBlock({ evidence, locale }: EvidenceBlockProps) {
     >
       <figcaption
         className={cn(
-          "mb-3 text-xs font-semibold tracking-[0.16em] uppercase",
+          "mb-3 flex items-center gap-2 text-xs font-semibold tracking-[0.16em] uppercase",
           styles.label,
         )}
       >
+        <Icon className="size-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />
         {label}
       </figcaption>
       <blockquote

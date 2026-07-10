@@ -5,6 +5,7 @@ import {
   type LocaleCode,
 } from "@/content/intentions";
 import { Link } from "@/i18n/navigation";
+import { categoryIcons } from "@/lib/icons";
 
 const categoryKeys = {
   sleep: {
@@ -36,6 +37,7 @@ export async function CategoryLinks({ locale }: CategoryLinksProps) {
     >
       {categories.map((category, index) => {
         const keys = categoryKeys[category.id];
+        const Icon = categoryIcons[category.id];
 
         return (
           <li key={category.id}>
@@ -46,7 +48,12 @@ export async function CategoryLinks({ locale }: CategoryLinksProps) {
                 animationDelay: `${(index + 1) * 100}ms`,
               }}
             >
-              <span className="text-primary mb-2 block text-xs tracking-[0.2em] uppercase">
+              <span className="text-primary mb-3 flex items-center gap-2.5 text-xs tracking-[0.2em] uppercase">
+                <Icon
+                  className="size-4 shrink-0"
+                  strokeWidth={1.75}
+                  aria-hidden="true"
+                />
                 {String(index + 1).padStart(2, "0")}
               </span>
               <span className="font-heading text-foreground group-hover:text-primary block text-2xl font-semibold tracking-tight transition-colors md:text-3xl">

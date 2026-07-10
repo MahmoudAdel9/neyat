@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { categoryIcons } from "@/lib/icons";
 
 const footerLinks = [
   { href: "/intentions/sleep", key: "sleep" as const },
@@ -40,16 +41,25 @@ export async function SiteFooter() {
               className="flex flex-wrap gap-x-4 gap-y-2 sm:justify-end"
               role="list"
             >
-              {footerLinks.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-muted-foreground hover:text-foreground text-base transition-colors"
-                  >
-                    {tNav(item.key)}
-                  </Link>
-                </li>
-              ))}
+              {footerLinks.map((item) => {
+                const Icon = categoryIcons[item.key];
+
+                return (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="text-muted-foreground hover:text-foreground inline-flex items-center gap-2 text-base transition-colors"
+                    >
+                      <Icon
+                        className="size-3.5 shrink-0 opacity-70"
+                        strokeWidth={1.75}
+                        aria-hidden="true"
+                      />
+                      {tNav(item.key)}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
         </div>

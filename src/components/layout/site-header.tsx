@@ -1,6 +1,6 @@
 "use client";
 
-import { MenuIcon } from "lucide-react";
+import { HomeIcon, MenuIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { LocaleSwitcher } from "@/components/layout/locale-switcher";
@@ -13,21 +13,24 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Link, usePathname } from "@/i18n/navigation";
+import { categoryIcons } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/", key: "home" as const },
-  { href: "/intentions/sleep", key: "sleep" as const },
-  { href: "/intentions/work", key: "work" as const },
-  { href: "/intentions/gym", key: "gym" as const },
+  { href: "/", key: "home" as const, icon: HomeIcon },
+  { href: "/intentions/sleep", key: "sleep" as const, icon: categoryIcons.sleep },
+  { href: "/intentions/work", key: "work" as const, icon: categoryIcons.work },
+  { href: "/intentions/gym", key: "gym" as const, icon: categoryIcons.gym },
 ];
 
 function NavLinks({
   onNavigate,
   className,
+  showIcons = false,
 }: {
   onNavigate?: () => void;
   className?: string;
+  showIcons?: boolean;
 }) {
   const t = useTranslations("Nav");
   const pathname = usePathname();
@@ -37,6 +40,7 @@ function NavLinks({
       {navItems.map((item) => {
         const isActive =
           item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+        const Icon = item.icon;
 
         return (
           <Link
@@ -44,13 +48,20 @@ function NavLinks({
             href={item.href}
             onClick={onNavigate}
             className={cn(
-              "rounded-md px-3 py-2 text-base transition-colors",
+              "inline-flex items-center gap-2 rounded-md px-3 py-2 text-base transition-colors",
               isActive
                 ? "bg-accent text-foreground"
                 : "text-muted-foreground hover:text-foreground hover:bg-accent/60",
             )}
             aria-current={isActive ? "page" : undefined}
           >
+            {showIcons ? (
+              <Icon
+                className="size-3.5 shrink-0 opacity-80"
+                strokeWidth={1.75}
+                aria-hidden="true"
+              />
+            ) : null}
             {t(item.key)}
           </Link>
         );
@@ -101,6 +112,7 @@ export function SiteHeader() {
               <NavLinks
                 className="mt-4 flex-col items-stretch px-2"
                 onNavigate={() => setOpen(false)}
+                showIcons
               />
             </SheetContent>
           </Sheet>
