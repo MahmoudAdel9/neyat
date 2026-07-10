@@ -1,17 +1,17 @@
-import { Amiri, Cairo, IBM_Plex_Sans_Arabic } from "next/font/google";
-import { notFound } from "next/navigation";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
-import {
-  getMessages,
-  getTranslations,
-  setRequestLocale,
-} from "next-intl/server";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SkipLink } from "@/components/layout/skip-link";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { routing } from "@/i18n/routing";
 import { getSiteUrl } from "@/lib/seo";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
+import { Amiri, IBM_Plex_Sans_Arabic } from "next/font/google";
+import { notFound } from "next/navigation";
 import "../globals.css";
 
 const uiFont = IBM_Plex_Sans_Arabic({
@@ -21,11 +21,11 @@ const uiFont = IBM_Plex_Sans_Arabic({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const displayFont = Cairo({
+const displayFont = IBM_Plex_Sans_Arabic({
   subsets: ["arabic", "latin"],
   variable: "--font-display",
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const serifFont = Amiri({
