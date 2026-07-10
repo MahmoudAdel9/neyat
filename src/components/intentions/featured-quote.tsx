@@ -54,6 +54,21 @@ export async function FeaturedQuote() {
         attribution={t("secondQuoteAttribution")}
         text={t("secondQuote")}
       />
+      <Quote
+        locale={locale}
+        attribution={t("thirdQuoteAttribution")}
+        text={t("thirdQuote")}
+      />
+      <Quote
+        locale={locale}
+        attribution={t("fourthQuoteAttribution")}
+        text={t("fourthQuote")}
+      />
+      <Quote
+        locale={locale}
+        attribution={t("fifthQuoteAttribution")}
+        text={t("fifthQuote")}
+      />
     </div>
   );
 }
