@@ -4,14 +4,18 @@ import { localize } from "@/content/intentions";
 import { EvidenceBlock } from "@/components/intentions/evidence-block";
 import { cn } from "@/lib/utils";
 
-const cardShell =
-  "overflow-hidden rounded-2xl border border-border/45 bg-card/55 transition-colors";
-
 type IntentionItemProps = {
   intention: Intention;
   locale: LocaleCode;
   level?: number;
 };
+
+function shellForLevel(level: number) {
+  if (level === 0) {
+    return "border-border/45 bg-card/55 hover:border-primary/35 hover:bg-card/70 open:border-primary/40 open:bg-card/80";
+  }
+  return "border-border/50 bg-muted/45 hover:border-primary/30 hover:bg-muted/60 open:border-primary/35 open:bg-muted/70";
+}
 
 export function IntentionItem({
   intention,
@@ -28,7 +32,12 @@ export function IntentionItem({
 
   if (!hasChildren && !hasEvidences) {
     return (
-      <article className={cn(cardShell, "px-4 py-4 sm:px-5 sm:py-5")}>
+      <article
+        className={cn(
+          "overflow-hidden rounded-2xl border px-4 py-4 transition-colors sm:px-5 sm:py-5",
+          shellForLevel(level),
+        )}
+      >
         <h3 className={titleClass}>{title}</h3>
       </article>
     );
@@ -37,9 +46,8 @@ export function IntentionItem({
   return (
     <details
       className={cn(
-        cardShell,
-        "group hover:border-primary/35 hover:bg-card/70",
-        "open:border-primary/40 open:bg-card/80",
+        "group/intention overflow-hidden rounded-2xl border transition-colors",
+        shellForLevel(level),
       )}
       open={level === 0}
     >
@@ -54,9 +62,9 @@ export function IntentionItem({
         <h3 className={cn(titleClass, "min-w-0 flex-1")}>{title}</h3>
         <span
           aria-hidden="true"
-          className="bg-muted/60 text-foreground/70 group-open:bg-primary/15 group-open:text-primary mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full transition-colors"
+          className="bg-muted/50 text-muted-foreground group-open/intention:bg-primary/20 group-open/intention:text-primary mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full transition-colors"
         >
-          <ChevronDownIcon className="size-4 transition-transform group-open:rotate-180" />
+          <ChevronDownIcon className="size-4 transition-transform duration-200 group-open/intention:rotate-180" />
         </span>
       </summary>
 
