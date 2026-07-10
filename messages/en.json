@@ -1,0 +1,53 @@
+{
+  "Meta": {
+    "siteName": "Nwaya",
+    "homeTitle": "Nwaya — Intentions for Sleep, Work & Training",
+    "homeDescription": "A collection of Islamic intentions for sleep, work, and training, with evidence from the Quran, Sunnah, and the early generations.",
+    "categoryTitle": "{category} Intentions | Nwaya",
+    "categoryDescription": "Islamic intentions for {category}, with evidence from the Quran and Sunnah."
+  },
+  "Nav": {
+    "home": "Home",
+    "sleep": "Sleep",
+    "work": "Work",
+    "gym": "Gym",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "switchLocale": "Switch language",
+    "skipToContent": "Skip to content"
+  },
+  "Home": {
+    "brand": "Nwaya",
+    "tagline": "Sacred intentions for sleep, work, and training — so everyday acts are counted for Allah’s sake.",
+    "explore": "Explore intentions",
+    "featuredQuote": "Worldly work is according to the worker’s intention: if he intends good by it, it is good; and if he intends otherwise, it is according to what he intended — for the Prophet ﷺ said: “Actions are only by intentions, and every person will have only what he intended.”",
+    "featuredQuoteAttribution": "Shaykh Ibn Uthaymeen (may Allah have mercy on him) said",
+    "secondQuote": "How many a small deed is magnified by intention, and how many a great deed is diminished by intention.",
+    "secondQuoteAttribution": "It is narrated from Ibn al-Mubarak (may Allah have mercy on him)",
+    "sleepTitle": "Sleep Intentions",
+    "sleepDescription": "Following the Sunnah, giving the body its right, and gaining strength for worship.",
+    "workTitle": "Work Intentions",
+    "workDescription": "Lawful earning, providing for family, charity, and independence from people.",
+    "gymTitle": "Gym Intentions",
+    "gymDescription": "Strengthening the body, protecting family, and beautifying oneself with kindness."
+  },
+  "Category": {
+    "backHome": "Back to home",
+    "intentionsHeading": "Intentions",
+    "evidenceLabel": {
+      "quran": "Quran",
+      "hadith": "Hadith",
+      "athar": "Athar",
+      "scholar": "Scholar"
+    }
+  },
+  "Footer": {
+    "rights": "We ask Allah for sincerity and acceptance.",
+    "builtFor": "For sincere intention in everyday deeds."
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "Sorry, we could not find this page.",
+    "backHome": "Back to home"
+  }
+}
