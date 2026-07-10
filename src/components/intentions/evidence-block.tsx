@@ -3,11 +3,30 @@ import type { Evidence, EvidenceKind, LocaleCode } from "@/content/intentions";
 import { localize } from "@/content/intentions";
 import { cn } from "@/lib/utils";
 
-const kindBorder: Record<EvidenceKind, string> = {
-  quran: "border-quran/50",
-  hadith: "border-hadith/50",
-  athar: "border-border",
-  scholar: "border-border",
+const kindStyles: Record<
+  EvidenceKind,
+  { accent: string; label: string; surface: string }
+> = {
+  quran: {
+    accent: "border-s-quran/70",
+    label: "text-quran",
+    surface: "border-quran/20 bg-quran/8",
+  },
+  hadith: {
+    accent: "border-s-hadith/70",
+    label: "text-hadith",
+    surface: "border-hadith/20 bg-hadith/8",
+  },
+  athar: {
+    accent: "border-s-border",
+    label: "text-muted-foreground",
+    surface: "border-border/50 bg-muted/30",
+  },
+  scholar: {
+    accent: "border-s-border",
+    label: "text-muted-foreground",
+    surface: "border-border/50 bg-muted/30",
+  },
 };
 
 type EvidenceBlockProps = {
@@ -18,15 +37,22 @@ type EvidenceBlockProps = {
 export async function EvidenceBlock({ evidence, locale }: EvidenceBlockProps) {
   const t = await getTranslations("Category");
   const label = t(`evidenceLabel.${evidence.kind}`);
+  const styles = kindStyles[evidence.kind];
 
   return (
     <figure
       className={cn(
-        "bg-card/40 border-inline-start my-3 rounded-e-md border-s-2 px-4 py-3",
-        kindBorder[evidence.kind],
+        "rounded-xl border border-s-[3px] px-4 py-4 sm:px-5 sm:py-5",
+        styles.accent,
+        styles.surface,
       )}
     >
-      <figcaption className="text-muted-foreground mb-2 text-xs font-medium tracking-wide uppercase">
+      <figcaption
+        className={cn(
+          "mb-3 text-xs font-medium tracking-[0.16em] uppercase",
+          styles.label,
+        )}
+      >
         {label}
       </figcaption>
       <blockquote
@@ -39,9 +65,11 @@ export async function EvidenceBlock({ evidence, locale }: EvidenceBlockProps) {
       >
         <p>«{localize(evidence.text, locale)}»</p>
       </blockquote>
-      <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
-        {localize(evidence.source, locale)}
-      </p>
+      <footer className="border-border/25 mt-4 border-t pt-3">
+        <p className="text-muted-foreground text-sm leading-relaxed">
+          {localize(evidence.source, locale)}
+        </p>
+      </footer>
     </figure>
   );
 }

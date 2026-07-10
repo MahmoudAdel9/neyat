@@ -1,7 +1,11 @@
+import { ChevronDownIcon } from "lucide-react";
 import type { Intention, LocaleCode } from "@/content/intentions";
 import { localize } from "@/content/intentions";
 import { EvidenceBlock } from "@/components/intentions/evidence-block";
 import { cn } from "@/lib/utils";
+
+const cardShell =
+  "overflow-hidden rounded-2xl border border-border/45 bg-card/55 transition-colors";
 
 type IntentionItemProps = {
   intention: Intention;
@@ -24,7 +28,7 @@ export function IntentionItem({
 
   if (!hasChildren && !hasEvidences) {
     return (
-      <article className="border-border/50 border-b py-5 last:border-b-0">
+      <article className={cn(cardShell, "px-4 py-4 sm:px-5 sm:py-5")}>
         <h3 className={titleClass}>{title}</h3>
       </article>
     );
@@ -32,29 +36,33 @@ export function IntentionItem({
 
   return (
     <details
-      className="border-border/50 group border-b last:border-b-0 open:pb-2"
+      className={cn(
+        cardShell,
+        "group hover:border-primary/35 hover:bg-card/70",
+        "open:border-primary/40 open:bg-card/80",
+      )}
       open={level === 0}
     >
       <summary
         className={cn(
-          "hover:text-primary cursor-pointer list-none py-5 marker:content-none",
+          "hover:text-primary cursor-pointer list-none px-4 py-4 marker:content-none sm:px-5 sm:py-5",
           "flex items-start justify-between gap-3 outline-none",
-          "focus-visible:ring-ring focus-visible:rounded-md focus-visible:ring-2",
+          "focus-visible:ring-ring focus-visible:rounded-xl focus-visible:ring-2",
           "[&::-webkit-details-marker]:hidden",
         )}
       >
         <h3 className={cn(titleClass, "min-w-0 flex-1")}>{title}</h3>
         <span
           aria-hidden="true"
-          className="text-muted-foreground mt-1 shrink-0 text-lg leading-none transition-transform group-open:rotate-45"
+          className="bg-muted/50 text-muted-foreground group-open:bg-primary/15 group-open:text-primary mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full transition-colors"
         >
-          +
+          <ChevronDownIcon className="size-4 transition-transform group-open:rotate-180" />
         </span>
       </summary>
 
-      <div className="pb-5">
+      <div className="border-border/30 space-y-4 border-t px-4 pt-4 pb-5 sm:px-5">
         {hasEvidences ? (
-          <div className="space-y-1">
+          <div className="flex flex-col gap-3">
             {intention.evidences.map((evidence, index) => (
               <EvidenceBlock
                 key={`${intention.id}-${evidence.kind}-${index}`}
@@ -66,7 +74,7 @@ export function IntentionItem({
         ) : null}
 
         {hasChildren ? (
-          <div className="border-border/40 ms-2 mt-2 space-y-0 border-s ps-4">
+          <div className="border-border/40 ms-1 flex flex-col gap-2.5 border-s-2 ps-3 sm:ps-4">
             {intention.children!.map((child) => (
               <IntentionItem
                 key={child.id}
@@ -89,7 +97,7 @@ type IntentionListProps = {
 
 export function IntentionList({ intentions, locale }: IntentionListProps) {
   return (
-    <div className="w-full">
+    <div className="flex w-full flex-col gap-4">
       {intentions.map((intention) => (
         <IntentionItem
           key={intention.id}
