@@ -8,6 +8,8 @@ export type Evidence = {
   kind: EvidenceKind;
   text: LocaleString;
   source: LocaleString;
+  /** Exact phrases to emphasize within `text` (must match diacritics). */
+  highlights?: LocaleString[];
 };
 
 export type Intention = {

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
 import type { Evidence, EvidenceKind, LocaleCode } from "@/content/intentions";
 import { localize } from "@/content/intentions";
@@ -35,6 +36,32 @@ const kindStyles: Record<
   },
 };
 
+function highlightText(text: string, phrases: string[]): ReactNode {
+  const matches = phrases.filter((phrase) => phrase && text.includes(phrase));
+  if (matches.length === 0) {
+    return text;
+  }
+
+  const pattern = matches
+    .map((phrase) => phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .sort((a, b) => b.length - a.length)
+    .join("|");
+  const parts = text.split(new RegExp(`(${pattern})`, "g"));
+
+  return parts.map((part, index) =>
+    matches.includes(part) ? (
+      <mark
+        key={`${part}-${index}`}
+        className="bg-accent/25 text-foreground rounded-sm px-0.5 not-italic"
+      >
+        {part}
+      </mark>
+    ) : (
+      part
+    ),
+  );
+}
+
 type EvidenceBlockProps = {
   evidence: Evidence;
   locale: LocaleCode;
@@ -45,6 +72,9 @@ export async function EvidenceBlock({ evidence, locale }: EvidenceBlockProps) {
   const label = t(`evidenceLabel.${evidence.kind}`);
   const styles = kindStyles[evidence.kind];
   const Icon = evidenceIcons[evidence.kind];
+  const text = localize(evidence.text, locale);
+  const highlightPhrases =
+    evidence.highlights?.map((phrase) => localize(phrase, locale)) ?? [];
 
   return (
     <figure
@@ -75,7 +105,7 @@ export async function EvidenceBlock({ evidence, locale }: EvidenceBlockProps) {
             : "font-quote text-foreground text-base leading-relaxed italic md:text-lg"
         }
       >
-        <p>«{localize(evidence.text, locale)}»</p>
+        <p>«{highlightText(text, highlightPhrases)}»</p>
       </blockquote>
       {localize(evidence.source, locale) ? (
         <footer className="border-border/30 mt-4 border-t pt-3">

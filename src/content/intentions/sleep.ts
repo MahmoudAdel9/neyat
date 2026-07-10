@@ -22,9 +22,15 @@ export const sleepCategory: IntentionCategory = {
         {
           kind: "hadith",
           text: {
-            ar: "وقُمْ ونَمْ",
-            en: "Pray and sleep.",
+            ar: "أُخبِرَ رَسولُ اللهِ صلَّى اللهُ عليه وسلَّم أنِّي أقولُ: واللهِ لَأصومَنَّ النَّهارَ، ولَأقومَنَّ اللَّيلَ ما عِشتُ، فقال له رَسولُ اللهِ صلَّى اللهُ عليه وسلَّم: أنتَ الذي تَقولُ: واللهِ لَأصومَنَّ النَّهارَ ولَأقومَنَّ اللَّيلَ ما عِشتُ، قُلتُ: قد قُلتُه، قال: إنَّكَ لا تَستَطيعُ ذلك، فصُمْ وأفطِرْ، وقُمْ ونَمْ، وصُمْ مِنَ الشَّهرِ ثَلاثةَ أيَّامٍ؛ فإنَّ الحَسَنةَ بعَشرِ أمثالِها، وذلك مِثلُ صيامِ الدَّهر....",
+            en: "The Messenger of Allah ﷺ was informed that I said: By Allah, I will fast every day and pray every night as long as I live. He said to me: Are you the one who says: By Allah, I will fast every day and pray every night as long as I live? I said: I did say it. He said: You will not be able to do that. So fast and break your fast, pray and sleep, and fast three days of each month; for a good deed is multiplied tenfold, and that is like fasting the whole year....",
           },
+          highlights: [
+            {
+              ar: "ونَمْ",
+              en: "sleep",
+            },
+          ],
           source: {
             ar: "رواه البخاري في صحيحه من حديث عبدالله بن عمرو بن العاص رضي الله عنه",
             en: "Narrated by al-Bukhari in his Sahih from the hadith of Abdullah ibn Amr ibn al-As (may Allah be pleased with them)",
@@ -45,6 +51,12 @@ export const sleepCategory: IntentionCategory = {
             ar: "أما واللهِ إنِّي لَأخشاكُم للهِ وأتقاكُم له، لَكِنِّي أصومُ وأُفطِرُ، وأُصَلِّي وأرقُدُ، وأتَزَوَّجُ النِّساءَ، فمَن رَغِبَ عن سُنَّتي فليسَ مِنِّي.",
             en: "By Allah, I am the most fearful of Allah among you and the most mindful of Him; yet I fast and break my fast, I pray and I sleep, and I marry women. Whoever turns away from my Sunnah is not of me.",
           },
+          highlights: [
+            {
+              ar: "وأرقُدُ",
+              en: "I sleep",
+            },
+          ],
           source: {
             ar: "رواه البخاري في صحيحه من حديث أنس بن مالك رضي الله عنه",
             en: "Narrated by al-Bukhari in his Sahih from the hadith of Anas ibn Malik (may Allah be pleased with him)",
@@ -65,6 +77,12 @@ export const sleepCategory: IntentionCategory = {
             ar: "صُمْ وأفطرْ، وقُمْ وَنَمْ؛ فإنَّ لجسدك عليك حقًّا، وإنَّ لعينك عليك حقًّا",
             en: "Fast and break your fast, pray and sleep; for your body has a right over you, and your eyes have a right over you.",
           },
+          highlights: [
+            {
+              ar: "فإنَّ لجسدك عليك حقًّا، وإنَّ لعينك عليك حقًّا",
+              en: "for your body has a right over you, and your eyes have a right over you",
+            },
+          ],
           source: {
             ar: "رواه البخاري في صحيحه من حديث عبدالله بن عمرو رضي الله عنه",
             en: "Narrated by al-Bukhari in his Sahih from the hadith of Abdullah ibn Amr (may Allah be pleased with him)",
@@ -169,6 +187,12 @@ export const sleepCategory: IntentionCategory = {
             ar: "سأل أبو موسى الأشعري معاذ بن جبل: فكيفَ تَقرَأُ أنتَ يا مُعاذُ؟ فقال: أنامُ أوَّلَ اللَّيلِ، فأقومُ وقد قَضَيتُ جُزئي مِنَ النَّومِ، فأقرَأُ ما كَتَبَ اللهُ لي، فأحتَسِبُ نَومَتي كما أحتَسِبُ قَومَتي.",
             en: "Abu Musa al-Ash‘ari asked Mu‘adh ibn Jabal: How do you recite, O Mu‘adh? He said: I sleep at the beginning of the night, then I rise having taken my share of sleep, and I recite what Allah has written for me. I hope for reward for my sleep just as I hope for reward for my standing in prayer.",
           },
+          highlights: [
+            {
+              ar: "فأحتَسِبُ نَومَتي",
+              en: "I hope for reward for my sleep",
+            },
+          ],
           source: {
             ar: "رواه البخاري في صحيحه من حديث أبي موسى الأشعري رضي الله عنه",
             en: "Narrated by al-Bukhari in his Sahih from the hadith of Abu Musa al-Ash‘ari (may Allah be pleased with him)",
