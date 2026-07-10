@@ -10,29 +10,56 @@ import {
   getTranslations,
   setRequestLocale,
 } from "next-intl/server";
-import { Amiri, IBM_Plex_Sans_Arabic } from "next/font/google";
+import {
+  Amiri,
+  IBM_Plex_Sans_Arabic,
+  Onest,
+  Source_Serif_4,
+} from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
 
-const uiFont = IBM_Plex_Sans_Arabic({
+const arUiFont = IBM_Plex_Sans_Arabic({
   subsets: ["arabic", "latin"],
   variable: "--font-ui",
   display: "swap",
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const displayFont = IBM_Plex_Sans_Arabic({
+const arDisplayFont = IBM_Plex_Sans_Arabic({
   subsets: ["arabic", "latin"],
   variable: "--font-display",
   display: "swap",
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const serifFont = Amiri({
+const arSerifFont = Amiri({
   subsets: ["arabic", "latin"],
   variable: "--font-serif",
   display: "swap",
   weight: ["400", "700"],
+  style: ["normal", "italic"],
+});
+
+const enUiFont = Onest({
+  subsets: ["latin"],
+  variable: "--font-ui",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const enDisplayFont = Onest({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const enSerifFont = Source_Serif_4({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
+  weight: ["400", "600"],
   style: ["normal", "italic"],
 });
 
@@ -75,12 +102,16 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   setRequestLocale(locale);
   const messages = await getMessages();
   const direction = locale === "ar" ? "rtl" : "ltr";
+  const fonts =
+    locale === "ar"
+      ? [arUiFont, arDisplayFont, arSerifFont]
+      : [enUiFont, enDisplayFont, enSerifFont];
 
   return (
     <html
       lang={locale}
       dir={direction}
-      className={`${uiFont.variable} ${displayFont.variable} ${serifFont.variable} h-full`}
+      className={`${fonts.map((font) => font.variable).join(" ")} h-full`}
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col">
