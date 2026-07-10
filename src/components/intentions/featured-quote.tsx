@@ -1,4 +1,5 @@
 import { getLocale, getTranslations } from "next-intl/server";
+import { cn } from "@/lib/utils";
 
 type QuoteProps = {
   attribution: string;
@@ -10,9 +11,12 @@ type QuoteProps = {
 function Quote({ attribution, text, locale, className }: QuoteProps) {
   return (
     <figure
-      className={`border-primary/30 bg-card/30 rounded-e-md border-s-2 px-5 py-6 sm:px-6 ${className ?? ""}`}
+      className={cn(
+        "border-primary/25 bg-primary/8 border-s-primary/70 rounded-2xl border border-s-[3px] px-5 py-5 sm:px-6 sm:py-6",
+        className,
+      )}
     >
-      <figcaption className="text-primary mb-3 text-sm font-medium tracking-wide">
+      <figcaption className="text-primary mb-3 text-xs font-semibold tracking-[0.16em] uppercase">
         {attribution}
       </figcaption>
       <blockquote
@@ -23,7 +27,7 @@ function Quote({ attribution, text, locale, className }: QuoteProps) {
             : "font-quote text-foreground text-base leading-relaxed italic md:text-lg"
         }
       >
-        <p>{text}</p>
+        <p>«{text}»</p>
       </blockquote>
     </figure>
   );
@@ -34,7 +38,7 @@ export async function FeaturedQuote() {
   const locale = await getLocale();
 
   return (
-    <div className="animate-rise space-y-4">
+    <div className="animate-rise flex flex-col gap-4">
       <Quote
         locale={locale}
         attribution={t("featuredQuoteAttribution")}

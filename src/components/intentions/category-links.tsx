@@ -30,7 +30,10 @@ export async function CategoryLinks({ locale }: CategoryLinksProps) {
   const categories = getAllCategories();
 
   return (
-    <ul className="mt-12 flex flex-col gap-6" role="list">
+    <ul
+      className="divide-border/50 mt-12 flex flex-col gap-6 divide-y"
+      role="list"
+    >
       {categories.map((category, index) => {
         const keys = categoryKeys[category.id];
 
@@ -38,7 +41,7 @@ export async function CategoryLinks({ locale }: CategoryLinksProps) {
           <li key={category.id}>
             <Link
               href={`/intentions/${category.id}`}
-              className="group border-border/50 hover:border-primary/40 focus-visible:ring-ring animate-rise focus-visible:ring-offset-background block border-b pb-6 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+              className="group hover:border-primary/40 focus-visible:ring-ring animate-rise focus-visible:ring-offset-background block pb-6 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
               style={{
                 animationDelay: `${(index + 1) * 100}ms`,
               }}
