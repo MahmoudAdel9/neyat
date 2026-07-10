@@ -20,25 +20,31 @@ export async function SiteFooter() {
           <div className="max-w-sm">
             <Link
               href="/"
-              className="font-heading text-foreground text-xl font-semibold tracking-tight transition-colors hover:text-primary"
+              className="font-heading text-foreground hover:text-primary text-xl font-semibold tracking-tight transition-colors"
             >
               {tHome("brand")}
             </Link>
-            <p className="text-foreground/85 mt-3 text-base leading-relaxed">
+            <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
               {t("builtFor")}
             </p>
           </div>
 
-          <nav aria-label={t("navLabel")} className="flex flex-col gap-2 sm:items-end">
-            <p className="text-primary mb-1 text-sm tracking-[0.2em] uppercase">
+          <nav
+            aria-label={t("navLabel")}
+            className="flex flex-col gap-2 sm:items-end"
+          >
+            <p className="text-primary mb-1 text-xs tracking-[0.2em] uppercase">
               {t("explore")}
             </p>
-            <ul className="flex flex-wrap gap-x-4 gap-y-2 sm:justify-end" role="list">
+            <ul
+              className="flex flex-wrap gap-x-4 gap-y-2 sm:justify-end"
+              role="list"
+            >
               {footerLinks.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-foreground/85 hover:text-foreground text-base transition-colors"
+                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                   >
                     {tNav(item.key)}
                   </Link>
@@ -48,13 +54,9 @@ export async function SiteFooter() {
           </nav>
         </div>
 
-        <div className="border-border/40 flex flex-col gap-2 border-t pt-6">
-          <p className="text-foreground/85 text-base leading-relaxed">
-            {t("rights")}
-          </p>
-          <p className="text-foreground/70 text-base">
-            {t("copyright", { year })}
-          </p>
+        <div className="border-border/40 flex flex-col gap-2 border-t pt-6 text-sm">
+          <p className="text-muted-foreground leading-relaxed">{t("rights")}</p>
+          <p className="text-muted-foreground/70">{t("copyright", { year })}</p>
         </div>
       </div>
     </footer>
