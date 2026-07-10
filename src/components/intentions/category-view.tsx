@@ -26,12 +26,14 @@ export async function CategoryView({ category, locale }: CategoryViewProps) {
       </Link>
 
       <header className="mb-10">
-        <div className="text-primary mb-4 flex size-11 items-center justify-center rounded-xl border border-primary/25 bg-primary/10">
-          <Icon className="size-5" strokeWidth={1.75} aria-hidden="true" />
+        <div className="flex items-center gap-4">
+          <div className="text-primary border-primary/25 bg-primary/10 flex size-11 items-center justify-center rounded-xl border">
+            <Icon className="size-5" strokeWidth={1.75} aria-hidden="true" />
+          </div>
+          <h1 className="font-heading -mt-1.5 text-3xl font-semibold tracking-tight md:text-4xl">
+            {localize(category.title, locale)}
+          </h1>
         </div>
-        <h1 className="font-heading text-3xl font-semibold tracking-tight md:text-4xl">
-          {localize(category.title, locale)}
-        </h1>
         <p className="text-muted-foreground mt-4 max-w-2xl text-lg leading-relaxed md:text-xl">
           {localize(category.description, locale)}
         </p>
