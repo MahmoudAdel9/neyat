@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: PageProps) {
   if (!hasLocale(routing.locales, locale)) {
     return {};
   }
-  return buildHomeMetadata({ locale: locale as LocaleCode });
+  return buildHomeMetadata({ locale });
 }
 
 export default async function HomePage({ params }: PageProps) {

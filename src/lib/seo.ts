@@ -7,7 +7,7 @@ import {
   type CategoryId,
   type LocaleCode,
 } from "@/content/intentions";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nwaya.app";
 
@@ -33,7 +33,7 @@ export function buildLocaleAlternates(path: string = "") {
 }
 
 type HomeMetadataArgs = {
-  locale: LocaleCode;
+  locale: Locale;
 };
 
 export async function buildHomeMetadata({
@@ -68,7 +68,7 @@ export async function buildHomeMetadata({
 }
 
 type CategoryMetadataArgs = {
-  locale: LocaleCode;
+  locale: Locale;
   categoryId: CategoryId;
 };
 

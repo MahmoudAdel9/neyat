@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return buildCategoryMetadata({
-    locale: locale as LocaleCode,
+    locale,
     categoryId: category,
   });
 }
