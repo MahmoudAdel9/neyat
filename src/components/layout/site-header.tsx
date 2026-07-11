@@ -100,12 +100,12 @@ export function SiteHeader() {
           <NavLinks className="items-center" />
           <div className="bg-border/80 mx-2 h-4 w-px" aria-hidden="true" />
           <ThemeToggle />
-          <LocaleSwitcher />
+          {/* <LocaleSwitcher /> */}
         </div>
 
         <div className="flex items-center gap-1 md:hidden">
           <ThemeToggle />
-          <LocaleSwitcher />
+          {/* <LocaleSwitcher /> */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
               render={
