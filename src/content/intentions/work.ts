@@ -4,11 +4,11 @@ export const workCategory: IntentionCategory = {
   id: "work",
   slug: "work",
   title: {
-    ar: "نوايا العمل",
+    ar: "نيات العمل",
     en: "Work Intentions",
   },
   description: {
-    ar: "نوايا شرعية للعمل والكسب الحلال والنفقة والصدقة والاستغناء عن الناس.",
+    ar: "نيات شرعية للعمل والكسب الحلال والنفقة والصدقة والاستغناء عن الناس.",
     en: "Islamic intentions for work: lawful earning, providing for family, charity, and independence from people.",
   },
   intentions: [

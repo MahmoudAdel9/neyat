@@ -4,11 +4,11 @@ export const gymCategory: IntentionCategory = {
   id: "gym",
   slug: "gym",
   title: {
-    ar: "نوايا الجيم",
+    ar: "نيات الجيم",
     en: "Gym Intentions",
   },
   description: {
-    ar: "نوايا شرعية لتقوية البدن وحماية الأهل والتزيّن بالمعروف.",
+    ar: "نيات شرعية لتقوية البدن وحماية الأهل والتزيّن بالمعروف.",
     en: "Islamic intentions for training: strengthening the body, protecting family, and beautifying oneself with kindness.",
   },
   intentions: [

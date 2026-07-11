@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "نوايا | Nwaya",
+    name: "نيات | Nwaya",
     short_name: "Nwaya",
     description:
-      "Islamic intentions for sleep, work, and training — نوايا شرعية للنوم والعمل والرياضة",
+      "Islamic intentions for sleep, work, and training — نيات شرعية للنوم والعمل والرياضة",
     start_url: "/ar",
     display: "standalone",
     background_color: "#1a2230",

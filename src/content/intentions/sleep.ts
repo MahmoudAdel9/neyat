@@ -4,11 +4,11 @@ export const sleepCategory: IntentionCategory = {
   id: "sleep",
   slug: "sleep",
   title: {
-    ar: "نوايا النوم",
+    ar: "نيات النوم",
     en: "Sleep Intentions",
   },
   description: {
-    ar: "نوايا شرعية للنوم امتثالاً للسنة وإعطاء الجسد حقه والتقوّي على العبادة.",
+    ar: "نيات شرعية للنوم امتثالاً للسنة وإعطاء الجسد حقه والتقوّي على العبادة.",
     en: "Islamic intentions for sleep: following the Sunnah, giving the body its right, and gaining strength for worship.",
   },
   intentions: [
